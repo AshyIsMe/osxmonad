@@ -112,14 +112,21 @@ tile' context = do
 
 tile :: XM.X ()
 tile = do
-  transitioning <- XM.io $ isMainDisplayTransitioning
-  if transitioning
-    then return ()
-    else do
-      context <- XM.io . new $ Windows nullPtr
-      tile' context
-      XM.io . freeWindows $ context
-      XM.io . free $ context
+  context <- XM.io . new $ Windows nullPtr
+  tile' context
+  XM.io . freeWindows $ context
+  XM.io . free $ context
+
+{-tile :: XM.X ()-}
+{-tile = do-}
+  {-transitioning <- XM.io $ isMainDisplayTransitioning-}
+  {-if transitioning-}
+    {-then return ()-}
+    {-else do-}
+      {-context <- XM.io . new $ Windows nullPtr-}
+      {-tile' context-}
+      {-XM.io . freeWindows $ context-}
+      {-XM.io . free $ context-}
 
 screenRectangle :: IO Rectangle
 screenRectangle = do
