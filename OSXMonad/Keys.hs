@@ -4,6 +4,7 @@ import XMonad
 
 -- From HIToolbox/Events.h
 
+-- Qwerty
 osxKeyToX11 :: Int -> KeySym
 osxKeyToX11 0x00 = xK_a
 osxKeyToX11 0x01 = xK_s
@@ -42,7 +43,7 @@ osxKeyToX11 0x22 = xK_i
 osxKeyToX11 0x23 = xK_p
 osxKeyToX11 0x25 = xK_l
 osxKeyToX11 0x26 = xK_j
--- TODO: 0x27
+osxKeyToX11 0x27 = xK_apostrophe
 osxKeyToX11 0x28 = xK_k
 osxKeyToX11 0x29 = xK_semicolon
 osxKeyToX11 0x2A = xK_backslash
@@ -71,11 +72,81 @@ osxKeyToX11 0x59 = xK_KP_7
 osxKeyToX11 0x5B = xK_KP_8
 osxKeyToX11 0x5C = xK_KP_9
 
+{--- Dvorak-}
+{-osxKeyToX11 :: Int -> KeySym-}
+{-osxKeyToX11 0x00 = xK_a-}
+{-osxKeyToX11 0x01 = xK_o-}
+{-osxKeyToX11 0x02 = xK_e-}
+{-osxKeyToX11 0x03 = xK_u-}
+{-osxKeyToX11 0x04 = xK_d-}
+{-osxKeyToX11 0x05 = xK_i-}
+{-osxKeyToX11 0x06 = xK_semicolon-}
+{-osxKeyToX11 0x07 = xK_q-}
+{-osxKeyToX11 0x08 = xK_j-}
+{-osxKeyToX11 0x09 = xK_k-}
+{-osxKeyToX11 0x0B = xK_x-}
+{-osxKeyToX11 0x0C = xK_apostrophe-}
+{-osxKeyToX11 0x0D = xK_comma-}
+{-osxKeyToX11 0x0E = xK_period-}
+{-osxKeyToX11 0x0F = xK_p-}
+{-osxKeyToX11 0x10 = xK_f-}
+{-osxKeyToX11 0x11 = xK_y-}
+{-osxKeyToX11 0x12 = xK_1-}
+{-osxKeyToX11 0x13 = xK_2-}
+{-osxKeyToX11 0x14 = xK_3-}
+{-osxKeyToX11 0x15 = xK_4-}
+{-osxKeyToX11 0x16 = xK_6-}
+{-osxKeyToX11 0x17 = xK_5-}
+{-osxKeyToX11 0x18 = xK_bracketright-}
+{-osxKeyToX11 0x19 = xK_9-}
+{-osxKeyToX11 0x1A = xK_7-}
+{-osxKeyToX11 0x1B = xK_bracketleft-}
+{-osxKeyToX11 0x1C = xK_8-}
+{-osxKeyToX11 0x1D = xK_0-}
+{-osxKeyToX11 0x1E = xK_equal-}
+{-osxKeyToX11 0x1F = xK_r-}
+{-osxKeyToX11 0x20 = xK_g-}
+{-osxKeyToX11 0x21 = xK_slash-}
+{-osxKeyToX11 0x22 = xK_c-}
+{-osxKeyToX11 0x23 = xK_l-}
+{-osxKeyToX11 0x25 = xK_n-}
+{-osxKeyToX11 0x26 = xK_h-}
+{-osxKeyToX11 0x27 = xK_minus-}
+{-osxKeyToX11 0x28 = xK_t-}
+{-osxKeyToX11 0x29 = xK_s-}
+{-osxKeyToX11 0x2A = xK_backslash-}
+{-osxKeyToX11 0x2B = xK_w-}
+{-osxKeyToX11 0x2C = xK_z-}
+{-osxKeyToX11 0x2D = xK_b-}
+{-osxKeyToX11 0x2E = xK_m-}
+{-osxKeyToX11 0x2F = xK_v-}
+{-osxKeyToX11 0x32 = xK_grave-}
+{-osxKeyToX11 0x41 = xK_KP_Decimal-}
+{-osxKeyToX11 0x43 = xK_KP_Multiply-}
+{-osxKeyToX11 0x45 = xK_KP_Add-}
+{--- TODO: 0x47-}
+{-osxKeyToX11 0x48 = xK_KP_Divide-}
+{-osxKeyToX11 0x4C = xK_KP_Enter-}
+{-osxKeyToX11 0x4E = xK_KP_Subtract-}
+{-osxKeyToX11 0x51 = xK_KP_Equal-}
+{-osxKeyToX11 0x52 = xK_KP_0-}
+{-osxKeyToX11 0x53 = xK_KP_1-}
+{-osxKeyToX11 0x54 = xK_KP_2-}
+{-osxKeyToX11 0x55 = xK_KP_3-}
+{-osxKeyToX11 0x56 = xK_KP_4-}
+{-osxKeyToX11 0x57 = xK_KP_5-}
+{-osxKeyToX11 0x58 = xK_KP_6-}
+{-osxKeyToX11 0x59 = xK_KP_7-}
+{-osxKeyToX11 0x5B = xK_KP_8-}
+{-osxKeyToX11 0x5C = xK_KP_9-}
+
+
 osxKeyToX11 0x24 = xK_Return
 osxKeyToX11 0x30 = xK_Tab
 osxKeyToX11 0x31 = xK_space
 osxKeyToX11 0x33 = xK_Delete
 osxKeyToX11 0x35 = xK_Escape
+osxKeyToX11 0x36 = xK_Super_R
 osxKeyToX11 0x37 = xK_Super_L
 osxKeyToX11 0x38 = xK_Shift_L
 osxKeyToX11 0x39 = xK_Caps_Lock
