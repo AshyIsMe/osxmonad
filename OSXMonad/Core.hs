@@ -221,7 +221,9 @@ osxmonad initxmc = do
       cstrings <- forM workspaces newCAString
       withArrayLen cstrings setupSpaces
       forM_ cstrings free
-      XM.runX conf state . forever $ do
-           tile
-           XM.io . threadDelay $ 1000 * 500
+      XM.runX conf state $ do
+          C.userCode $ C.startupHook initxmc
+          forever $ do
+             tile
+             XM.io . threadDelay $ 1000 * 500
       return ()
